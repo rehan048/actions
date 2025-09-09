@@ -5,13 +5,13 @@ jobs:
     lint:
         runs-on: ubuntu-latest
         steps:
-            - name: install eslint
-              run: |
-                sudo apt update
-                sudo apt install eslint
-            - name: Get repository content
-              uses: actions/checkout@v5
-            - name: Run lint script
+            - name: Get code
+              uses: actions/checkout@v3
+            - name: Install NodeJS
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: Lint command
               run: eslint --ext .jsx --fix src
 
     test:
