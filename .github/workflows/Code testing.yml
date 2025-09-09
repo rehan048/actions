@@ -9,6 +9,8 @@ jobs:
               run: |
                 sudo apt update
                 sudo apt install eslint
+            - name: Get repository content
+              uses: actions/checkout@v5
             - name: Run lint script
               run: eslint --ext .jsx --fix src
 
