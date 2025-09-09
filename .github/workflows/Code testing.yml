@@ -1,0 +1,23 @@
+name: Code testing
+on: push
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run lint script
+              run: eslint --ext .jsx --fix src
+
+    test:
+        runs-on: ubuntu-latest
+        needs: lint      
+        steps:
+            - name: Run Test script
+              run: vitest run
+
+    deploy:
+        runs-on: ubuntu-latest
+        needs: test
+        steps:
+            - name: Deploy website
+              run: vite build
