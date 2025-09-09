@@ -5,6 +5,10 @@ jobs:
     lint:
         runs-on: ubuntu-latest
         steps:
+            - name: install eslint
+              run: |
+                sudo apt update
+                sudo apt isntall eslint
             - name: Run lint script
               run: eslint --ext .jsx --fix src
 
