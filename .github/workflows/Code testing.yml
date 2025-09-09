@@ -8,7 +8,7 @@ jobs:
             - name: install eslint
               run: |
                 sudo apt update
-                sudo apt isntall eslint
+                sudo apt install eslint
             - name: Run lint script
               run: eslint --ext .jsx --fix src
 
