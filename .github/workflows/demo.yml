@@ -17,7 +17,7 @@ jobs:
         run: npm run test
   build:
     needs: test
-    runs-on: ubuntu-latest¨
+    runs-on: ubuntu-latest
     outputs:
       dist-file: ${{steps.publish.outputs.output}}
 
