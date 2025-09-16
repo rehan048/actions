@@ -68,7 +68,7 @@ jobs:
           path: dist
   deploy:
     needs: build
-    uses: ./execution-flow.yml
+    uses: ./.github/workflows/execution-flow.yml
 
   report:
     needs: [lint, deploy]
